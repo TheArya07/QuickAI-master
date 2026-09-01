@@ -30,7 +30,7 @@ export const generateArticle = async (req, res) => {
     await new Promise((resolve) => setTimeout(resolve, 1200));
 
     const response = await groq.chat.completions.create({
-  model: "llama-3.3-70b-versatile",
+  model: "openai/gpt-oss-20b",
   messages: [{ role: "user", content: prompt }],
   temperature: 0.7,
   max_tokens: 100,
@@ -71,7 +71,7 @@ export const generateBlogTitle = async (req, res) => {
     await new Promise((resolve) => setTimeout(resolve, 1200));
 
     const response = await groq.chat.completions.create({
-  model: "llama-3.3-70b-versatile",
+  model: "openai/gpt-oss-20b",
   messages: [{ role: "user", content: prompt }],
   temperature: 0.7,
   max_tokens: 100,
@@ -213,7 +213,7 @@ export const resumeReview = async (req, res) => {
     const prompt = `Review this resume and provide improvements:\n\n${pdfData.text}`;
 
     const response = await groq.chat.completions.create({
-  model: "llama-3.3-70b-versatile",
+  model: "openai/gpt-oss-20b",
   messages: [{ role: "user", content: prompt }],
   temperature: 0.7,
   max_tokens: 1000,
